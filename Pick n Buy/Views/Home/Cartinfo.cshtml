@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Pick_n_Buy.Models.MdlOrder>
+          @if (Model != null)
+          {
+               <!-- Cart -->
+            <div class="cart">
+                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                    <div class="cart_icon">
+                        <i class="fa fa-shopping-cart" style="font-size:50px;"></i>
+                        <div class="cart_count bg-primary"><span>@Model.Count()</span></div>
+                    </div>
+                    <div class="cart_content">
+                        <div class="cart_text"><a href='@Url.Action("Cart", "Client")'>Cart</a></div>
+                        <div class="cart_price">Rs:@Model.Sum(i => i.Total)</div>
+                    </div>
+                </div>
+            </div>
+          }
+          else
+          {
+               <!-- Cart -->
+            <div class="cart">
+                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                    <div class="cart_icon">
+                        <i class="fa fa-shopping-cart" style="font-size:50px;"></i>
+                        <div class="cart_count bg-primary"><span>0</span></div>
+                    </div>
+                    <div class="cart_content">
+                        <div class="cart_text"><a href='@Url.Action("Cart", "Client")'>Cart</a></div>
+                        <div class="cart_price">Rs:0</div>
+                    </div>
+                </div>
+            </div>
+          }
+   
